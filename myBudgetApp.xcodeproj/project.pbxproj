@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2CF730151CC973B900E14F29 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CF730141CC973B900E14F29 /* main.cpp */; };
+		2CF730321CC9741800E14F29 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CF730291CC9741800E14F29 /* main.cpp */; };
+		2CF730331CC9741800E14F29 /* Account.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7302A1CC9741800E14F29 /* Account.cpp */; };
+		2CF730341CC9741800E14F29 /* Budget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7302B1CC9741800E14F29 /* Budget.cpp */; };
+		2CF730351CC9741800E14F29 /* Envelope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7302C1CC9741800E14F29 /* Envelope.cpp */; };
+		2CF730361CC9741800E14F29 /* BudgetItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7302F1CC9741800E14F29 /* BudgetItem.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +28,15 @@
 
 /* Begin PBXFileReference section */
 		2CF730111CC973B900E14F29 /* myBudgetApp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = myBudgetApp; sourceTree = BUILT_PRODUCTS_DIR; };
-		2CF730141CC973B900E14F29 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		2CF730291CC9741800E14F29 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		2CF7302A1CC9741800E14F29 /* Account.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Account.cpp; sourceTree = "<group>"; };
+		2CF7302B1CC9741800E14F29 /* Budget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Budget.cpp; sourceTree = "<group>"; };
+		2CF7302C1CC9741800E14F29 /* Envelope.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Envelope.cpp; sourceTree = "<group>"; };
+		2CF7302D1CC9741800E14F29 /* Budget.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Budget.hpp; sourceTree = "<group>"; };
+		2CF7302E1CC9741800E14F29 /* Account.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Account.hpp; sourceTree = "<group>"; };
+		2CF7302F1CC9741800E14F29 /* BudgetItem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BudgetItem.cpp; sourceTree = "<group>"; };
+		2CF730301CC9741800E14F29 /* BudgetItem.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BudgetItem.hpp; sourceTree = "<group>"; };
+		2CF730311CC9741800E14F29 /* Envelope.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Envelope.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +69,15 @@
 		2CF730131CC973B900E14F29 /* myBudgetApp */ = {
 			isa = PBXGroup;
 			children = (
-				2CF730141CC973B900E14F29 /* main.cpp */,
+				2CF730291CC9741800E14F29 /* main.cpp */,
+				2CF7302A1CC9741800E14F29 /* Account.cpp */,
+				2CF7302B1CC9741800E14F29 /* Budget.cpp */,
+				2CF7302C1CC9741800E14F29 /* Envelope.cpp */,
+				2CF7302D1CC9741800E14F29 /* Budget.hpp */,
+				2CF7302E1CC9741800E14F29 /* Account.hpp */,
+				2CF7302F1CC9741800E14F29 /* BudgetItem.cpp */,
+				2CF730301CC9741800E14F29 /* BudgetItem.hpp */,
+				2CF730311CC9741800E14F29 /* Envelope.hpp */,
 			);
 			path = myBudgetApp;
 			sourceTree = "<group>";
@@ -118,7 +138,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CF730151CC973B900E14F29 /* main.cpp in Sources */,
+				2CF730361CC9741800E14F29 /* BudgetItem.cpp in Sources */,
+				2CF730321CC9741800E14F29 /* main.cpp in Sources */,
+				2CF730331CC9741800E14F29 /* Account.cpp in Sources */,
+				2CF730341CC9741800E14F29 /* Budget.cpp in Sources */,
+				2CF730351CC9741800E14F29 /* Envelope.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
