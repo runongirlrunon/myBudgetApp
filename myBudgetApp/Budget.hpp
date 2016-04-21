@@ -1,0 +1,54 @@
+/*************************************
+ * Lindsey Hogg
+ * lhogg@mail.sfsu.edu
+ * myBudget
+ * Budget.hpp
+ *************************************/
+
+#ifndef Budget_hpp
+#define Budget_hpp
+
+#include <stdio.h>
+#include <string>
+#include "BudgetItem.hpp"
+#include "Envelope.hpp"
+#include "Account.hpp"
+
+using namespace std;
+
+class Budget{
+private:
+    string title;
+    int envelope_count;
+    Envelope *envelopes = new Envelope[0];
+    int account_count;
+    Account *accounts = new Account[0];
+    
+public:
+    // constructor/destructor
+    Budget();
+    ~Budget();
+    
+    // getters and setters
+    string getBudgetTitle();
+    void setBudgetTitle(string titleValue);
+    int getBudgetEnvCount();
+    void setBudgetEnvCount(int envCountValue);
+    int getBudgetAcctCount();
+    void setBudgetAcctCount(int acctCountValue);
+    
+    // helper functions
+    void addEnvelope(int idValue, string titleValue);
+    void addAccount(int idValue, string titleValue, double balanceValue);
+    Envelope getEnvelope(int position);
+    Account getAccount(int position);
+    void accountDeposit(int id, double amount);
+    void accountWithdrawal(int id, double amount);
+    
+    // friendly overloaded operators
+    friend ostream& operator<<(ostream& outputStream, const Budget& thisBudget);
+    friend ofstream& operator<<(ofstream& outputFileStream, const Budget& thisBudget);
+    friend ifstream& operator>>(ifstream& inputFileStream, Budget& thisBudget);
+};
+
+#endif /* Budget_hpp */
