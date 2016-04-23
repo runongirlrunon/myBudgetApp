@@ -24,6 +24,11 @@ private:
     int account_count;
     Account *accounts = new Account[0];
     
+    int currentMonth, currentYear;
+    
+    void setMonth(int month);
+    void setYear(int year);
+    
 public:
     // constructor/destructor
     Budget();
@@ -42,6 +47,7 @@ public:
     void addAccount(int idValue, string titleValue, double balanceValue);
     Envelope getEnvelope(int position);
     Account getAccount(int position);
+    void showBudget();
     void accountDeposit(int id, double amount);
     void accountWithdrawal(int id, double amount);
     

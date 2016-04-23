@@ -14,12 +14,7 @@
 
 using namespace std;
 
-class Account : public BudgetItem {
-private:
-    int id;
-    string title;
-    double balance;
-    
+class Account : public BudgetItem {  
 public:
     // constructors
     Account();

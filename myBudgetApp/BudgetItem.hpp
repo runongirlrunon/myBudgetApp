@@ -20,7 +20,6 @@ protected:
     double balance;
     
 public:
-    void deposit(double amount);
     virtual bool withdraw(double amount) = 0;
 };
 

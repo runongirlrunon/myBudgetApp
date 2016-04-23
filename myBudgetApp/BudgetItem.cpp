@@ -8,7 +8,3 @@
 #include "BudgetItem.hpp"
 
 using namespace std;
-
-void deposit(double amount){
-    
-}

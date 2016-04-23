@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <ctime>
 #include "Budget.hpp"
 
 using namespace std;
@@ -16,12 +17,24 @@ using namespace std;
  *************************************/
 
 Budget::Budget(){
-    title = "default title";
-    envelope_count = 0;
-    account_count = 0;
+    // initializing sample Budget
+    ifstream inStream;
+    inStream.open("budget");
+    if(inStream.fail()){
+        cout << "BUDGET file does not exist." << endl << endl;
+    }
+    
+    else{
+        inStream >> *this;
+    }
+    
 } // end constructor
 
 Budget::~Budget(){
+    ofstream outStream;
+    outStream.open("budget", ios::app);
+    outStream << this;
+    
     envelope_count = 0;
     account_count = 0;
     delete [] envelopes;
@@ -49,6 +62,14 @@ int Budget::getBudgetAcctCount(){
 }
 void Budget::setBudgetAcctCount(int acctCountValue){
     account_count = acctCountValue;
+}
+
+void Budget::setMonth(int month){
+    currentMonth = month;
+}
+
+void Budget::setYear(int year){
+    currentYear = year;
 }
 
 /*************************************
@@ -97,6 +118,23 @@ Account Budget::getAccount(int position){
     return accounts[position];
 } // end getAccount
 
+void Budget::showBudget(){
+    cout << "----- " << this->getBudgetTitle() << " -----" << endl;
+    cout << this->getBudgetAcctCount() << " Accounts:" << endl;
+    for (int loopCount = 0; loopCount < this->getBudgetAcctCount(); loopCount++) {
+        cout << this->getAccount(loopCount).getAcctId() << ": ";
+        cout << this->getAccount(loopCount).getAcctTitle() << " - ";
+        cout << this->getAccount(loopCount).getAcctBalance() << endl;
+    }
+    cout << endl;
+    cout << this->getBudgetEnvCount() << " Envelopes:" << endl;
+    for (int loopCount = 0; loopCount < this->getBudgetEnvCount(); loopCount++) {
+        cout << this->getEnvelope(loopCount).getEnvId() << ": ";
+        cout << this->getEnvelope(loopCount).getEnvTitle() << endl;
+    }
+    cout << endl;
+} // end showBudget
+
 void Budget::accountDeposit(int id, double amount){
     for (int i = 0; i < account_count; i++) {
         if(accounts[i].getAcctId() == id){
@@ -116,7 +154,7 @@ void Budget::accountWithdrawal(int id, double amount){
 } // end accountWithdrawal
 
 /*************************************
-  * friendly overloaded operators
+ * friendly overloaded operators
  *************************************/
 
 ostream& operator<<(ostream& outputStream, const Budget& budget){
@@ -131,6 +169,7 @@ ostream& operator<<(ostream& outputStream, const Budget& budget){
         outputStream << budget.accounts[loopcount].getAcctId() << " ";
         outputStream << budget.accounts[loopcount].getAcctTitle() << endl;
     }
+    outputStream << budget.currentMonth << " " << budget.currentYear << endl;
     return outputStream;
 } // end ostream<< overload
 
@@ -146,6 +185,7 @@ ofstream& operator<<(ofstream& outFileStream, const Budget& budget){
         outFileStream << budget.accounts[loopcount].getAcctId() << " ";
         outFileStream << budget.accounts[loopcount].getAcctTitle() << endl;
     }
+    outFileStream << budget.currentMonth << " " << budget.currentYear << endl;
     
     return outFileStream;
 } // end ofstream<< overload
@@ -159,11 +199,11 @@ ifstream& operator>>(ifstream& inFileStream, Budget& budget){
     while (!inFileStream.eof()) {
         // get title
         inFileStream >> nextWord;
-        budget.title = nextWord;
+        budget.setBudgetTitle(nextWord);
         
         // get envelope_count
         inFileStream >> nextWord;
-        budget.envelope_count = stoi(nextWord);
+        budget.setBudgetEnvCount(stoi(nextWord));
         
         // add all envelopes
         for (int loopCount = 0; loopCount < budget.envelope_count; loopCount++) {
@@ -174,7 +214,7 @@ ifstream& operator>>(ifstream& inFileStream, Budget& budget){
         
         // get account_count
         inFileStream >> nextWord;
-        budget.account_count =stoi(nextWord);
+        budget.setBudgetAcctCount(stoi(nextWord));
         
         // add all accounts
         for (int loopCount = 0; loopCount < budget.account_count; loopCount++) {
@@ -183,6 +223,11 @@ ifstream& operator>>(ifstream& inFileStream, Budget& budget){
             inFileStream >> balanceValue;
             budget.addAccount(idValue, titleValue, balanceValue);
         }
+        
+        // get file dates
+        inFileStream >> nextWord;
+        budget.setMonth(stoi(nextWord));
+        budget.setYear(stoi(nextWord));
     }
     
     return inFileStream;
