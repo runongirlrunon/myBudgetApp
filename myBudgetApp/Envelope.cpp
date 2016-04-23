@@ -1,7 +1,7 @@
 /*************************************
  * Lindsey Hogg
  * lhogg@mail.sfsu.edu
- * myBudget
+ * myBudgetApp
  * Envelope.cpp
  *************************************/
 

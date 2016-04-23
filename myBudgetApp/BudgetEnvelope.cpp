@@ -1,10 +1,9 @@
-//
-//  BudgetEnvelope.cpp
-//  myBudgetApp
-//
-//  Created by lindsey anne on 4/21/16.
-//  Copyright © 2016 Lindsey Hogg. All rights reserved.
-//
+/*************************************
+ * Lindsey Hogg
+ * lhogg@mail.sfsu.edu
+ * myBudgetApp
+ * BudgetEnvelope.cpp
+ *************************************/
 
 #include "BudgetEnvelope.hpp"
 
