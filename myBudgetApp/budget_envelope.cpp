@@ -2,10 +2,10 @@
  * Lindsey Hogg
  * lhogg@mail.sfsu.edu
  * myBudgetApp
- * BudgetEnvelope.cpp
+ * budget_envelope.cpp
  *************************************/
 
-#include "BudgetEnvelope.hpp"
+#include "budget_envelope.hpp"
 
 bool BudgetEnvelope::withdraw(double amount){
     if((balance -= amount) < 0){

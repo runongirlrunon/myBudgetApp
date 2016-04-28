@@ -2,18 +2,18 @@
  * Lindsey Hogg
  * lhogg@mail.sfsu.edu
  * myBudgetApp
- * BudgetEnvelope.hpp
+ * budget_envelope.hpp
  *************************************/
 
-#ifndef BudgetEnvelope_hpp
-#define BudgetEnvelope_hpp
+#ifndef budget_envelope_hpp
+#define budget_envelope_hpp
 
 #include <stdio.h>
-#include "BudgetItem.hpp"
-
-#endif /* BudgetEnvelope_hpp */
+#include "budget_item.hpp"
 
 class BudgetEnvelope : public BudgetItem {
 public:
     bool withdraw(double amount);
 };
+
+#endif /* budget_envelope_hpp */

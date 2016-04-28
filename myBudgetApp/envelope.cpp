@@ -2,10 +2,10 @@
  * Lindsey Hogg
  * lhogg@mail.sfsu.edu
  * myBudgetApp
- * Envelope.cpp
+ * envelope.cpp
  *************************************/
 
-#include "Envelope.hpp"
+#include "envelope.hpp"
 
 /*************************************
  * constructors

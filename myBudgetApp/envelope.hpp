@@ -2,11 +2,11 @@
  * Lindsey Hogg
  * lhogg@mail.sfsu.edu
  * myBudgetApp
- * Envelope.hpp
+ * envelope.hpp
  *************************************/
 
-#ifndef Envelope_hpp
-#define Envelope_hpp
+#ifndef envelope_hpp
+#define envelope_hpp
 
 #include <stdio.h>
 #include <string>
@@ -30,4 +30,4 @@ public:
     void setEnvTitle(string titleValue);
 };
 
-#endif /* Envelope_hpp */
+#endif /* envelope_hpp */

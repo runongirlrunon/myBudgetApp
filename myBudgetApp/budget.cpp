@@ -2,13 +2,13 @@
  * Lindsey Hogg
  * lhogg@mail.sfsu.edu
  * myBudgetApp
- * Budget.cpp
+ * budget.cpp
  *************************************/
 
 #include <iostream>
 #include <fstream>
 #include <ctime>
-#include "Budget.hpp"
+#include "budget.hpp"
 
 using namespace std;
 

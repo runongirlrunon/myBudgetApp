@@ -2,11 +2,11 @@
  * Lindsey Hogg
  * lhogg@mail.sfsu.edu
  * myBudgetApp
- * BudgetApplication.hpp
+ * budget_application.hpp
  *************************************/
 
-#ifndef BudgetApplication_hpp
-#define BudgetApplication_hpp
+#ifndef budget_application_hpp
+#define budget_application_hpp
 
 #include <stdio.h>
 #include "Budget.hpp"
@@ -40,4 +40,4 @@ public:
 };
 
 
-#endif /* BudgetApplication_hpp */
+#endif /* budget_application_hpp */

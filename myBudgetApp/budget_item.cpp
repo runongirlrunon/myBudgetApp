@@ -2,9 +2,9 @@
  * Lindsey Hogg
  * lhogg@mail.sfsu.edu
  * myBudgetApp
- * BudgetItem.cpp
+ * budget_item.cpp
  *************************************/
 
-#include "BudgetItem.hpp"
+#include "budget_item.hpp"
 
 using namespace std;

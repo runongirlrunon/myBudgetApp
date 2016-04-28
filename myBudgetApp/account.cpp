@@ -2,10 +2,10 @@
  * Lindsey Hogg
  * lhogg@mail.sfsu.edu
  * myBudgetApp
- * Account.cpp
+ * account.cpp
  *************************************/
 
-#include "Account.hpp"
+#include "account.hpp"
 
 using namespace std;
 

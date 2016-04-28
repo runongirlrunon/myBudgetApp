@@ -2,17 +2,17 @@
  * Lindsey Hogg
  * lhogg@mail.sfsu.edu
  * myBudgetApp
- * Budget.hpp
+ * budget.hpp
  *************************************/
 
-#ifndef Budget_hpp
-#define Budget_hpp
+#ifndef budget_hpp
+#define budget_hpp
 
 #include <stdio.h>
 #include <string>
-#include "BudgetItem.hpp"
-#include "Envelope.hpp"
-#include "Account.hpp"
+#include "budget_item.hpp"
+#include "envelope.hpp"
+#include "account.hpp"
 
 using namespace std;
 
@@ -57,4 +57,4 @@ public:
     friend ifstream& operator>>(ifstream& inputFileStream, Budget& thisBudget);
 };
 
-#endif /* Budget_hpp */
+#endif /* budget_hpp */
