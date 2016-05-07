@@ -18,3 +18,6 @@ The purpose of this project is to complete the transition from imperative progra
 
 [Part 6]
 The purpose of this project is to implement a template Tree class that will be able to hold instances of our BudgetEnvelope. Change the given Tree implementation to allow multiple types to be stored in the Nodes.
+
+[Part 7] 
+The purpose of this project is to leverage the template Tree class we created to allow our budget application to record many months of budget.
