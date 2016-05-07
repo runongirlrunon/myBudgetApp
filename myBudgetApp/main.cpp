@@ -10,6 +10,7 @@
 #include <string>
 #include "budget.hpp"
 #include "budget_application.hpp"
+#include "tree.h"
 
 int main()
 {

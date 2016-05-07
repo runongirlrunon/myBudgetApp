@@ -17,6 +17,9 @@ using namespace std;
  *************************************/
 
 Budget::Budget(){
+    title = "";
+    envelope_count = 0;
+    account_count = 0;
     // initializing sample Budget
     ifstream inStream;
     inStream.open("budget");
@@ -54,14 +57,9 @@ void Budget::setBudgetTitle(string titleValue){
 int Budget::getBudgetEnvCount(){
     return envelope_count;
 }
-void Budget::setBudgetEnvCount(int envCountValue){
-    envelope_count = envCountValue;
-}
+
 int Budget::getBudgetAcctCount(){
     return account_count;
-}
-void Budget::setBudgetAcctCount(int acctCountValue){
-    account_count = acctCountValue;
 }
 
 void Budget::setMonth(int month){
@@ -203,10 +201,10 @@ ifstream& operator>>(ifstream& inFileStream, Budget& budget){
         
         // get envelope_count
         inFileStream >> nextWord;
-        budget.setBudgetEnvCount(stoi(nextWord));
+        int envCount = stoi(nextWord);
         
         // add all envelopes
-        for (int loopCount = 0; loopCount < budget.envelope_count; loopCount++) {
+        for (int loopCount = 0; loopCount < envCount; loopCount++) {
             inFileStream >> idValue;
             inFileStream >> titleValue;
             budget.addEnvelope(idValue, titleValue);
@@ -214,10 +212,10 @@ ifstream& operator>>(ifstream& inFileStream, Budget& budget){
         
         // get account_count
         inFileStream >> nextWord;
-        budget.setBudgetAcctCount(stoi(nextWord));
+        int acctCount = stoi(nextWord);
         
         // add all accounts
-        for (int loopCount = 0; loopCount < budget.account_count; loopCount++) {
+        for (int loopCount = 0; loopCount < acctCount; loopCount++) {
             inFileStream >> idValue;
             inFileStream >> titleValue;
             inFileStream >> balanceValue;
@@ -228,6 +226,7 @@ ifstream& operator>>(ifstream& inFileStream, Budget& budget){
         inFileStream >> nextWord;
         budget.setMonth(stoi(nextWord));
         budget.setYear(stoi(nextWord));
+        break;
     }
     
     return inFileStream;

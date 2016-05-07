@@ -7,6 +7,10 @@
 
 #include "budget_envelope.hpp"
 
+/*************************************
+ * helper functions
+ *************************************/
+
 bool BudgetEnvelope::withdraw(double amount){
     if((balance -= amount) < 0){
         return false;
@@ -15,4 +19,16 @@ bool BudgetEnvelope::withdraw(double amount){
         balance -= amount;
     }
     return true;
+}
+
+/*************************************
+ * friendly overloaded operators
+ *************************************/
+
+bool operator<(const BudgetEnvelope& leftSide, const BudgetEnvelope& rightSide) {
+    return (leftSide.id < rightSide.id);
+}
+
+bool operator==(const BudgetEnvelope& leftSide, const BudgetEnvelope& rightSide){
+    return (leftSide.id == rightSide.id);
 }

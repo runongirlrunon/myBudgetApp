@@ -38,9 +38,9 @@ public:
     string getBudgetTitle();
     void setBudgetTitle(string titleValue);
     int getBudgetEnvCount();
-    void setBudgetEnvCount(int envCountValue);
+//    void setBudgetEnvCount(int envCountValue);
     int getBudgetAcctCount();
-    void setBudgetAcctCount(int acctCountValue);
+//    void setBudgetAcctCount(int acctCountValue);
     
     // helper functions
     void addEnvelope(int idValue, string titleValue);

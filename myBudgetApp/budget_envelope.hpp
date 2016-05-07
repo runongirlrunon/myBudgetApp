@@ -14,6 +14,10 @@
 class BudgetEnvelope : public BudgetItem {
 public:
     bool withdraw(double amount);
+    
+    // friendly overloaded operators
+    friend bool operator<(const BudgetEnvelope& leftSide, const BudgetEnvelope& rightSide);
+    friend bool operator==(const BudgetEnvelope& leftSide, const BudgetEnvelope& rightSide);
 };
 
 #endif /* budget_envelope_hpp */
