@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2CD247361CDDB3C50011325F /* envelope_box.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CD247341CDDB3C50011325F /* envelope_box.cpp */; };
 		2CF730321CC9741800E14F29 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CF730291CC9741800E14F29 /* main.cpp */; };
-		2CF730331CC9741800E14F29 /* Account.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7302A1CC9741800E14F29 /* Account.cpp */; };
-		2CF730341CC9741800E14F29 /* Budget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7302B1CC9741800E14F29 /* Budget.cpp */; };
-		2CF730351CC9741800E14F29 /* Envelope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7302C1CC9741800E14F29 /* Envelope.cpp */; };
-		2CF730361CC9741800E14F29 /* BudgetItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7302F1CC9741800E14F29 /* BudgetItem.cpp */; };
-		2CF730391CC991B100E14F29 /* BudgetApplication.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CF730371CC991B100E14F29 /* BudgetApplication.cpp */; };
-		2CF7303C1CC991C000E14F29 /* Menu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7303A1CC991C000E14F29 /* Menu.cpp */; };
-		2CF7303F1CC991CF00E14F29 /* BudgetEnvelope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7303D1CC991CF00E14F29 /* BudgetEnvelope.cpp */; };
+		2CF730331CC9741800E14F29 /* account.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7302A1CC9741800E14F29 /* account.cpp */; };
+		2CF730341CC9741800E14F29 /* budget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7302B1CC9741800E14F29 /* budget.cpp */; };
+		2CF730351CC9741800E14F29 /* envelope_label.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7302C1CC9741800E14F29 /* envelope_label.cpp */; };
+		2CF730361CC9741800E14F29 /* budget_item.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7302F1CC9741800E14F29 /* budget_item.cpp */; };
+		2CF730391CC991B100E14F29 /* budget_application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CF730371CC991B100E14F29 /* budget_application.cpp */; };
+		2CF7303C1CC991C000E14F29 /* menu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7303A1CC991C000E14F29 /* menu.cpp */; };
+		2CF7303F1CC991CF00E14F29 /* budget_envelope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7303D1CC991CF00E14F29 /* budget_envelope.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,23 +31,27 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2CD2472D1CDD6EDA0011325F /* budget */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = budget; sourceTree = "<group>"; };
+		2CD2472F1CDD81BB0011325F /* node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = node.h; sourceTree = "<group>"; };
+		2CD247311CDD81BB0011325F /* tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tree.h; sourceTree = "<group>"; };
+		2CD247341CDDB3C50011325F /* envelope_box.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = envelope_box.cpp; sourceTree = "<group>"; };
+		2CD247351CDDB3C50011325F /* envelope_box.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = envelope_box.h; sourceTree = "<group>"; };
 		2CF730111CC973B900E14F29 /* myBudgetApp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = myBudgetApp; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CF730291CC9741800E14F29 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		2CF7302A1CC9741800E14F29 /* Account.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Account.cpp; sourceTree = "<group>"; };
-		2CF7302B1CC9741800E14F29 /* Budget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Budget.cpp; sourceTree = "<group>"; };
-		2CF7302C1CC9741800E14F29 /* Envelope.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Envelope.cpp; sourceTree = "<group>"; };
-		2CF7302D1CC9741800E14F29 /* Budget.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Budget.hpp; sourceTree = "<group>"; };
-		2CF7302E1CC9741800E14F29 /* Account.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Account.hpp; sourceTree = "<group>"; };
-		2CF7302F1CC9741800E14F29 /* BudgetItem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BudgetItem.cpp; sourceTree = "<group>"; };
-		2CF730301CC9741800E14F29 /* BudgetItem.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BudgetItem.hpp; sourceTree = "<group>"; };
-		2CF730311CC9741800E14F29 /* Envelope.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Envelope.hpp; sourceTree = "<group>"; };
-		2CF730371CC991B100E14F29 /* BudgetApplication.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BudgetApplication.cpp; sourceTree = "<group>"; };
-		2CF730381CC991B100E14F29 /* BudgetApplication.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BudgetApplication.hpp; sourceTree = "<group>"; };
-		2CF7303A1CC991C000E14F29 /* Menu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Menu.cpp; sourceTree = "<group>"; };
-		2CF7303B1CC991C000E14F29 /* Menu.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Menu.hpp; sourceTree = "<group>"; };
-		2CF7303D1CC991CF00E14F29 /* BudgetEnvelope.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BudgetEnvelope.cpp; sourceTree = "<group>"; };
-		2CF7303E1CC991CF00E14F29 /* BudgetEnvelope.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BudgetEnvelope.hpp; sourceTree = "<group>"; };
-		2CF730421CCB35D000E14F29 /* budget */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = budget; sourceTree = "<group>"; };
+		2CF7302A1CC9741800E14F29 /* account.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = account.cpp; sourceTree = "<group>"; };
+		2CF7302B1CC9741800E14F29 /* budget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = budget.cpp; sourceTree = "<group>"; };
+		2CF7302C1CC9741800E14F29 /* envelope_label.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = envelope_label.cpp; sourceTree = "<group>"; };
+		2CF7302D1CC9741800E14F29 /* budget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = budget.h; sourceTree = "<group>"; };
+		2CF7302E1CC9741800E14F29 /* account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = account.h; sourceTree = "<group>"; };
+		2CF7302F1CC9741800E14F29 /* budget_item.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = budget_item.cpp; sourceTree = "<group>"; };
+		2CF730301CC9741800E14F29 /* budget_item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = budget_item.h; sourceTree = "<group>"; };
+		2CF730311CC9741800E14F29 /* envelope_label.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = envelope_label.h; sourceTree = "<group>"; };
+		2CF730371CC991B100E14F29 /* budget_application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = budget_application.cpp; sourceTree = "<group>"; };
+		2CF7303A1CC991C000E14F29 /* menu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = menu.cpp; sourceTree = "<group>"; };
+		2CF7303B1CC991C000E14F29 /* menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = menu.h; sourceTree = "<group>"; };
+		2CF7303D1CC991CF00E14F29 /* budget_envelope.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = budget_envelope.cpp; sourceTree = "<group>"; };
+		2CF7303E1CC991CF00E14F29 /* budget_envelope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = budget_envelope.h; sourceTree = "<group>"; };
+		2CF730441CCB4C8E00E14F29 /* budget_application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = budget_application.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +68,6 @@
 		2CF730081CC973B900E14F29 = {
 			isa = PBXGroup;
 			children = (
-				2CF730421CCB35D000E14F29 /* budget */,
 				2CF730131CC973B900E14F29 /* myBudgetApp */,
 				2CF730121CC973B900E14F29 /* Products */,
 			);
@@ -80,21 +84,26 @@
 		2CF730131CC973B900E14F29 /* myBudgetApp */ = {
 			isa = PBXGroup;
 			children = (
+				2CD2472D1CDD6EDA0011325F /* budget */,
 				2CF730291CC9741800E14F29 /* main.cpp */,
-				2CF730381CC991B100E14F29 /* BudgetApplication.hpp */,
-				2CF730371CC991B100E14F29 /* BudgetApplication.cpp */,
-				2CF7303B1CC991C000E14F29 /* Menu.hpp */,
-				2CF7303A1CC991C000E14F29 /* Menu.cpp */,
-				2CF7302D1CC9741800E14F29 /* Budget.hpp */,
-				2CF7302B1CC9741800E14F29 /* Budget.cpp */,
-				2CF730311CC9741800E14F29 /* Envelope.hpp */,
-				2CF7302C1CC9741800E14F29 /* Envelope.cpp */,
-				2CF730301CC9741800E14F29 /* BudgetItem.hpp */,
-				2CF7302F1CC9741800E14F29 /* BudgetItem.cpp */,
-				2CF7302E1CC9741800E14F29 /* Account.hpp */,
-				2CF7302A1CC9741800E14F29 /* Account.cpp */,
-				2CF7303E1CC991CF00E14F29 /* BudgetEnvelope.hpp */,
-				2CF7303D1CC991CF00E14F29 /* BudgetEnvelope.cpp */,
+				2CF730441CCB4C8E00E14F29 /* budget_application.h */,
+				2CF730371CC991B100E14F29 /* budget_application.cpp */,
+				2CF7303B1CC991C000E14F29 /* menu.h */,
+				2CF7303A1CC991C000E14F29 /* menu.cpp */,
+				2CF7302D1CC9741800E14F29 /* budget.h */,
+				2CF7302B1CC9741800E14F29 /* budget.cpp */,
+				2CD247351CDDB3C50011325F /* envelope_box.h */,
+				2CD247341CDDB3C50011325F /* envelope_box.cpp */,
+				2CF730311CC9741800E14F29 /* envelope_label.h */,
+				2CF7302C1CC9741800E14F29 /* envelope_label.cpp */,
+				2CD247311CDD81BB0011325F /* tree.h */,
+				2CD2472F1CDD81BB0011325F /* node.h */,
+				2CF730301CC9741800E14F29 /* budget_item.h */,
+				2CF7302F1CC9741800E14F29 /* budget_item.cpp */,
+				2CF7302E1CC9741800E14F29 /* account.h */,
+				2CF7302A1CC9741800E14F29 /* account.cpp */,
+				2CF7303E1CC991CF00E14F29 /* budget_envelope.h */,
+				2CF7303D1CC991CF00E14F29 /* budget_envelope.cpp */,
 			);
 			path = myBudgetApp;
 			sourceTree = "<group>";
@@ -155,14 +164,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CF730361CC9741800E14F29 /* BudgetItem.cpp in Sources */,
-				2CF730391CC991B100E14F29 /* BudgetApplication.cpp in Sources */,
+				2CF730361CC9741800E14F29 /* budget_item.cpp in Sources */,
+				2CF730391CC991B100E14F29 /* budget_application.cpp in Sources */,
 				2CF730321CC9741800E14F29 /* main.cpp in Sources */,
-				2CF730331CC9741800E14F29 /* Account.cpp in Sources */,
-				2CF7303F1CC991CF00E14F29 /* BudgetEnvelope.cpp in Sources */,
-				2CF7303C1CC991C000E14F29 /* Menu.cpp in Sources */,
-				2CF730341CC9741800E14F29 /* Budget.cpp in Sources */,
-				2CF730351CC9741800E14F29 /* Envelope.cpp in Sources */,
+				2CF730331CC9741800E14F29 /* account.cpp in Sources */,
+				2CF7303F1CC991CF00E14F29 /* budget_envelope.cpp in Sources */,
+				2CF7303C1CC991C000E14F29 /* menu.cpp in Sources */,
+				2CD247361CDDB3C50011325F /* envelope_box.cpp in Sources */,
+				2CF730341CC9741800E14F29 /* budget.cpp in Sources */,
+				2CF730351CC9741800E14F29 /* envelope_label.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

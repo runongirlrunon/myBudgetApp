@@ -2,11 +2,11 @@
  * Lindsey Hogg
  * lhogg@mail.sfsu.edu
  * myBudgetApp
- * Menu.hpp
+ * menu.h
  *************************************/
 
-#ifndef Menu_hpp
-#define Menu_hpp
+#ifndef menu_h
+#define menu_h
 
 #include <stdio.h>
 
@@ -26,4 +26,4 @@ public:
     int last_selection();
 };
 
-#endif /* Menu_hpp */
+#endif /* menu_h */

@@ -8,30 +8,17 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "Budget.hpp"
-#include "BudgetApplication.hpp"
+#include "budget.h"
+#include "budget_application.h"
 
-using namespace std;
-
-// This little function is just to be sure that everything exits
-// and ends like it's supposed to. :)
-void endProgram();
-
-int main(int argc, const char * argv[]) {
-    BudgetApplication *myBudgetApp = new BudgetApplication;
+int main()
+{
+    BudgetApplication app;
     
-    while(myBudgetApp->is_running()){
-        myBudgetApp->prompt_loop();
+    while( app.is_running() ) {
+        app.prompt_loop();
     }
-        
-    endProgram();
-    return 0;
-} // end main
-
-void endProgram(){
-    cout << "Goodbye!" << endl;
-} // end endProgram
-
+}
 
 
 

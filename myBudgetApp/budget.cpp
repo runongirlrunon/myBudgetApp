@@ -2,13 +2,13 @@
  * Lindsey Hogg
  * lhogg@mail.sfsu.edu
  * myBudgetApp
- * Budget.cpp
+ * budget.cpp
  *************************************/
 
 #include <iostream>
 #include <fstream>
 #include <ctime>
-#include "Budget.hpp"
+#include "budget.h"
 
 using namespace std;
 
@@ -17,6 +17,9 @@ using namespace std;
  *************************************/
 
 Budget::Budget(){
+    title = "";
+    envelope_count = 0;
+    account_count = 0;
     // initializing sample Budget
     ifstream inStream;
     inStream.open("budget");
@@ -27,17 +30,20 @@ Budget::Budget(){
     else{
         inStream >> *this;
     }
+    inStream.close();
+    currentEnvBox->setDates(currentMonth, currentYear);
     
 } // end constructor
 
 Budget::~Budget(){
     ofstream outStream;
-    outStream.open("budget", ios::app);
-    outStream << this;
+    outStream.open("budget");
+    outStream << *this;
+    outStream.close();
     
     envelope_count = 0;
     account_count = 0;
-    delete [] envelopes;
+    delete [] envelopeLabels;
     delete [] accounts;
 } // end destructor
 
@@ -54,14 +60,9 @@ void Budget::setBudgetTitle(string titleValue){
 int Budget::getBudgetEnvCount(){
     return envelope_count;
 }
-void Budget::setBudgetEnvCount(int envCountValue){
-    envelope_count = envCountValue;
-}
+
 int Budget::getBudgetAcctCount(){
     return account_count;
-}
-void Budget::setBudgetAcctCount(int acctCountValue){
-    account_count = acctCountValue;
 }
 
 void Budget::setMonth(int month){
@@ -77,18 +78,18 @@ void Budget::setYear(int year){
  *************************************/
 
 void Budget::addEnvelope(int idValue, string titleValue){
-    Envelope *envelopesTemp = new Envelope[envelope_count+1];
+    EnvelopeLabel *envelopesTemp = new EnvelopeLabel[envelope_count+1];
     // copy the old array first, if it exists
     if (envelope_count > 0) {
         for (int loopCount = 0; loopCount < envelope_count; loopCount++) {
-            (envelopesTemp + loopCount)->setEnvId((envelopes + loopCount)->getEnvId());
-            (envelopesTemp + loopCount)->setEnvTitle((envelopes + loopCount)->getEnvTitle());
+            (envelopesTemp + loopCount)->setEnvId((envelopeLabels + loopCount)->getEnvId());
+            (envelopesTemp + loopCount)->setEnvTitle((envelopeLabels + loopCount)->getEnvTitle());
         }
     }
     // then add the new value
     (envelopesTemp + envelope_count)->setEnvId(idValue);
     (envelopesTemp + envelope_count)->setEnvTitle(titleValue);
-    envelopes = envelopesTemp;
+    envelopeLabels = envelopesTemp;
     envelope_count++;
 } // end addEnvelope
 
@@ -110,8 +111,8 @@ void Budget::addAccount(int idValue, string titleValue, double balanceValue){
     account_count++;
 } // end addAccount
 
-Envelope Budget::getEnvelope(int position){
-    return envelopes[position];
+EnvelopeLabel Budget::getEnvelope(int position){
+    return envelopeLabels[position];
 } // end getEnvelope
 
 Account Budget::getAccount(int position){
@@ -153,6 +154,14 @@ void Budget::accountWithdrawal(int id, double amount){
     }
 } // end accountWithdrawal
 
+void Budget::envelopeDeposit(int id, double amount){
+    currentEnvBox->deposit(id, amount);
+} // end envelopeDeposit
+
+void Budget::envelopeWithdrawal(int id, double amount){
+    currentEnvBox->withdraw(id, amount);
+} // end envelopeWithdrawal
+
 /*************************************
  * friendly overloaded operators
  *************************************/
@@ -161,13 +170,14 @@ ostream& operator<<(ostream& outputStream, const Budget& budget){
     outputStream << budget.title << endl;
     outputStream << budget.envelope_count << endl;
     for (int loopcount = 0; loopcount < budget.envelope_count; loopcount++) {
-        outputStream << budget.envelopes[loopcount].getEnvId() << " ";
-        outputStream << budget.envelopes[loopcount].getEnvTitle() << endl;
+        outputStream << budget.envelopeLabels[loopcount].getEnvId() << " ";
+        outputStream << budget.envelopeLabels[loopcount].getEnvTitle() << endl;
     }
     outputStream << budget.account_count << endl;
     for (int loopcount = 0; loopcount < budget.account_count; loopcount++) {
         outputStream << budget.accounts[loopcount].getAcctId() << " ";
-        outputStream << budget.accounts[loopcount].getAcctTitle() << endl;
+        outputStream << budget.accounts[loopcount].getAcctTitle() << " ";
+        outputStream << budget.accounts[loopcount].getAcctBalance() << endl;
     }
     outputStream << budget.currentMonth << " " << budget.currentYear << endl;
     return outputStream;
@@ -177,13 +187,14 @@ ofstream& operator<<(ofstream& outFileStream, const Budget& budget){
     outFileStream << budget.title << endl;
     outFileStream << budget.envelope_count << endl;
     for (int loopcount = 0; loopcount < budget.envelope_count; loopcount++) {
-        outFileStream << budget.envelopes[loopcount].getEnvId() << " ";
-        outFileStream << budget.envelopes[loopcount].getEnvTitle() << endl;
+        outFileStream << budget.envelopeLabels[loopcount].getEnvId() << " ";
+        outFileStream << budget.envelopeLabels[loopcount].getEnvTitle() << endl;
     }
     outFileStream << budget.account_count << endl;
     for (int loopcount = 0; loopcount < budget.account_count; loopcount++) {
         outFileStream << budget.accounts[loopcount].getAcctId() << " ";
-        outFileStream << budget.accounts[loopcount].getAcctTitle() << endl;
+        outFileStream << budget.accounts[loopcount].getAcctTitle() << " ";
+        outFileStream << budget.accounts[loopcount].getAcctBalance() << endl;
     }
     outFileStream << budget.currentMonth << " " << budget.currentYear << endl;
     
@@ -196,39 +207,39 @@ ifstream& operator>>(ifstream& inFileStream, Budget& budget){
     string titleValue;
     double balanceValue;
     
-    while (!inFileStream.eof()) {
-        // get title
-        inFileStream >> nextWord;
-        budget.setBudgetTitle(nextWord);
-        
-        // get envelope_count
-        inFileStream >> nextWord;
-        budget.setBudgetEnvCount(stoi(nextWord));
-        
-        // add all envelopes
-        for (int loopCount = 0; loopCount < budget.envelope_count; loopCount++) {
-            inFileStream >> idValue;
-            inFileStream >> titleValue;
-            budget.addEnvelope(idValue, titleValue);
-        }
-        
-        // get account_count
-        inFileStream >> nextWord;
-        budget.setBudgetAcctCount(stoi(nextWord));
-        
-        // add all accounts
-        for (int loopCount = 0; loopCount < budget.account_count; loopCount++) {
-            inFileStream >> idValue;
-            inFileStream >> titleValue;
-            inFileStream >> balanceValue;
-            budget.addAccount(idValue, titleValue, balanceValue);
-        }
-        
-        // get file dates
-        inFileStream >> nextWord;
-        budget.setMonth(stoi(nextWord));
-        budget.setYear(stoi(nextWord));
+    // get title
+    inFileStream >> nextWord;
+    budget.setBudgetTitle(nextWord);
+    
+    // get envelope_count
+    inFileStream >> nextWord;
+    int envCount = stoi(nextWord);
+    
+    // add all envelopes
+    for (int loopCount = 0; loopCount < envCount; loopCount++) {
+        inFileStream >> idValue;
+        inFileStream >> titleValue;
+        budget.addEnvelope(idValue, titleValue);
     }
+    
+    // get account_count
+    inFileStream >> nextWord;
+    int acctCount = stoi(nextWord);
+    
+    
+    // add all accounts
+    for (int loopCount = 0; loopCount < acctCount; loopCount++) {
+        inFileStream >> idValue;
+        inFileStream >> titleValue;
+        inFileStream >> balanceValue;
+        budget.addAccount(idValue, titleValue, balanceValue);
+    }
+    
+    // get file dates
+    inFileStream >> nextWord;
+    budget.setMonth(stoi(nextWord));
+    inFileStream >> nextWord;
+    budget.setYear(stoi(nextWord));
     
     return inFileStream;
 } // end ifstream>> overload

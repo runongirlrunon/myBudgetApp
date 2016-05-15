@@ -2,26 +2,26 @@
  * Lindsey Hogg
  * lhogg@mail.sfsu.edu
  * myBudgetApp
- * Envelope.hpp
+ * envelope.h
  *************************************/
 
-#ifndef Envelope_hpp
-#define Envelope_hpp
+#ifndef envelope_label_h
+#define envelope_label_h
 
 #include <stdio.h>
 #include <string>
 
 using namespace std;
 
-class Envelope {
+class EnvelopeLabel {
 private:
     int id;
     string title;
     
 public:
     // constructors
-    Envelope();
-    Envelope(int idValue, string titleValue);
+    EnvelopeLabel();
+    EnvelopeLabel(int idValue, string titleValue);
     
     // getters and setters
     int getEnvId();
@@ -30,4 +30,4 @@ public:
     void setEnvTitle(string titleValue);
 };
 
-#endif /* Envelope_hpp */
+#endif /* envelope_label_h */
