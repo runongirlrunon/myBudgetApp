@@ -3,8 +3,8 @@ CFLAGS=-c -Wall
 
 all: driver
 
-driver: main.o budget_application.o menu.o budget.o budget_item.o account.o envelope.o budget_envelope.o
-	$(CC) main.o budget_application.o menu.o budget.o budget_item.o account.o envelope.o budget_envelope.o -o driver
+driver: main.o budget_application.o menu.o budget.o budget_item.o account.o envelope_label.o budget_envelope.o envelope_box.o
+	$(CC) main.o budget_application.o menu.o budget.o budget_item.o account.o envelope_label.o budget_envelope.o envelope_box.o -o driver
 
 main.o: main.cpp
 	$(CC) $(CFLAGS) main.cpp
@@ -24,11 +24,14 @@ budget_item.o: budget_item.cpp budget_item.h
 account.o: account.cpp account.h
 	$(CC) $(CFLAGS) account.cpp
 
-envelope.o: envelope.cpp envelope.h
-	$(CC) $(CFLAGS) envelope.cpp
+envelope_label.o: envelope_label.cpp envelope_label.h
+	$(CC) $(CFLAGS) envelope_label.cpp
 
 budget_envelope.o: budget_envelope.cpp budget_envelope.h
-		$(CC) $(CFLAGS) budget_envelope.cpp
+	$(CC) $(CFLAGS) budget_envelope.cpp
+
+envelope_box.o: envelope_box.cpp envelope_box.h
+	$(CC) $(CFLAGS) envelope_box.cpp
 
 clean:
 	rm -f *.o driver
