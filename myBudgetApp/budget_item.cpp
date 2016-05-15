@@ -5,6 +5,6 @@
  * budget_item.cpp
  *************************************/
 
-#include "budget_item.hpp"
+#include "budget_item.h"
 
 using namespace std;

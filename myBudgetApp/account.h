@@ -2,15 +2,15 @@
  * Lindsey Hogg
  * lhogg@mail.sfsu.edu
  * myBudgetApp
- * account.hpp
+ * account.h
  *************************************/
 
-#ifndef account_hpp
-#define account_hpp
+#ifndef account_h
+#define account_h
 
 #include <stdio.h>
 #include <string>
-#include "budget_item.hpp"
+#include "budget_item.h"
 
 using namespace std;
 
@@ -30,4 +30,4 @@ public:
     bool withdraw(double amount);
 };
 
-#endif /* account_hpp */
+#endif /* account_h */

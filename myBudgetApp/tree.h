@@ -1,3 +1,10 @@
+/*************************************
+ * Lindsey Hogg
+ * lhogg@mail.sfsu.edu
+ * myBudgetApp
+ * tree.h
+ *************************************/
+
 #ifndef __TREE_H__
 #define __TREE_H__
 
@@ -17,6 +24,8 @@ private:
     int size( Node<T> * );
     void insert( Node<T> *, T );
     bool search( Node<T> *, T );
+    Node<T>* find( Node<T> *, T);
+    T returnRootKey();
     
     void preorder_traversal( Node<T> * );
     void inorder_traversal( Node<T> * );
@@ -26,9 +35,9 @@ public:
     Tree();
     ~Tree();
 
-    void insert( T );
-    bool search( T );
-    T* find( T );
+    void insert(T);
+    bool search(T);
+    Node<T>* find(T);
     int height();
     int size();
 
@@ -77,7 +86,7 @@ int Tree<T>::height( Node<T> * node ) {
 
 template <class T>
 int Tree<T>::size() {
-    return size( root );
+    return size(root);
 } // end size [public]
 
 template <class T>
@@ -140,9 +149,29 @@ bool Tree<T>::search( Node<T> * node, T value ) {
 } // end search [private]
 
 template <class T>
-T* Tree<T>::find(T value){
-    return(search(value).node);
-} // end find
+Node<T>* Tree<T>::find(T value){
+    return find(root, value);
+} // end find [public[
+
+template <class T>
+Node<T>* Tree<T>::find( Node<T> * ptr, T value){
+    if(ptr != NULL){
+        if(ptr->value == value){
+            return ptr;
+        }
+        else{
+            if(value < ptr->value){
+                return find(ptr->left, value);
+            }
+            else{
+                return find(ptr->right, value);
+            }
+        }
+    }
+    else{
+        return NULL;
+    }
+} // end find [private]
 
 template <class T>
 void Tree<T>::preorder_traversal() {

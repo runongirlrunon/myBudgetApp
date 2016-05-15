@@ -5,17 +5,17 @@
  * envelope.cpp
  *************************************/
 
-#include "envelope.hpp"
+#include "envelope_label.h"
 
 /*************************************
  * constructors
  *************************************/
 
-Envelope::Envelope(){
+EnvelopeLabel::EnvelopeLabel(){
     id = 0;
     title = "No title";
 }
-Envelope::Envelope(int idValue, string titleValue){
+EnvelopeLabel::EnvelopeLabel(int idValue, string titleValue){
     id = idValue;
     title = titleValue;
 }
@@ -24,15 +24,15 @@ Envelope::Envelope(int idValue, string titleValue){
  * getters and setters
  *************************************/
 
-int Envelope::getEnvId(){
+int EnvelopeLabel::getEnvId(){
     return id;
 }
-void Envelope::setEnvId(int idValue){
+void EnvelopeLabel::setEnvId(int idValue){
     id = idValue;
 }
-string Envelope::getEnvTitle(){
+string EnvelopeLabel::getEnvTitle(){
     return title;
 }
-void Envelope::setEnvTitle(string titleValue){
+void EnvelopeLabel::setEnvTitle(string titleValue){
     title = titleValue;
 }

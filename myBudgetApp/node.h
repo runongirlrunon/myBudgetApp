@@ -1,3 +1,10 @@
+/*************************************
+ * Lindsey Hogg
+ * lhogg@mail.sfsu.edu
+ * myBudgetApp
+ * node.h
+ *************************************/
+
 #ifndef __NODE_H__
 #define __NODE_H__
 

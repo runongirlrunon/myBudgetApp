@@ -2,11 +2,11 @@
  * Lindsey Hogg
  * lhogg@mail.sfsu.edu
  * myBudgetApp
- * budget_item.hpp
+ * budget_item.h
  *************************************/
 
-#ifndef budget_item_hpp
-#define budget_item_hpp
+#ifndef budget_item_h
+#define budget_item_h
 
 #include <stdio.h>
 #include <string>
@@ -23,4 +23,4 @@ public:
     virtual bool withdraw(double amount) = 0;
 };
 
-#endif /* budget_item_hpp */
+#endif /* budget_item_h */

@@ -2,17 +2,18 @@
  * Lindsey Hogg
  * lhogg@mail.sfsu.edu
  * myBudgetApp
- * budget.hpp
+ * budget.h
  *************************************/
 
-#ifndef budget_hpp
-#define budget_hpp
+#ifndef budget_h
+#define budget_h
 
 #include <stdio.h>
 #include <string>
-#include "budget_item.hpp"
-#include "envelope.hpp"
-#include "account.hpp"
+#include "budget_item.h"
+#include "account.h"
+#include "envelope_label.h"
+#include "envelope_box.h"
 
 using namespace std;
 
@@ -20,11 +21,12 @@ class Budget{
 private:
     string title;
     int envelope_count;
-    Envelope *envelopes = new Envelope[0];
+    EnvelopeLabel *envelopeLabels = new EnvelopeLabel[0];
     int account_count;
     Account *accounts = new Account[0];
     
     int currentMonth, currentYear;
+    EnvelopeBox *currentEnvBox = new EnvelopeBox(envelopeLabels);
     
     void setMonth(int month);
     void setYear(int year);
@@ -38,18 +40,18 @@ public:
     string getBudgetTitle();
     void setBudgetTitle(string titleValue);
     int getBudgetEnvCount();
-//    void setBudgetEnvCount(int envCountValue);
     int getBudgetAcctCount();
-//    void setBudgetAcctCount(int acctCountValue);
     
     // helper functions
     void addEnvelope(int idValue, string titleValue);
     void addAccount(int idValue, string titleValue, double balanceValue);
-    Envelope getEnvelope(int position);
+    EnvelopeLabel getEnvelope(int position);
     Account getAccount(int position);
     void showBudget();
     void accountDeposit(int id, double amount);
     void accountWithdrawal(int id, double amount);
+    void envelopeDeposit(int id, double amount);
+    void envelopeWithdrawal(int id, double amount);
     
     // friendly overloaded operators
     friend ostream& operator<<(ostream& outputStream, const Budget& thisBudget);
@@ -57,4 +59,4 @@ public:
     friend ifstream& operator>>(ifstream& inputFileStream, Budget& thisBudget);
 };
 
-#endif /* budget_hpp */
+#endif /* budget_h */

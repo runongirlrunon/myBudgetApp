@@ -5,7 +5,7 @@
  * account.cpp
  *************************************/
 
-#include "account.hpp"
+#include "account.h"
 
 using namespace std;
 

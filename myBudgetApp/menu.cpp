@@ -6,7 +6,7 @@
  *************************************/
 
 #include <iostream>
-#include "menu.hpp"
+#include "menu.h"
 
 using namespace std;
 
@@ -17,8 +17,8 @@ Menu::Menu(){
 void Menu::show_menu(){
     cout << "SELECT AN OPTION:" << endl;
     cout << "1. Show budget" << endl;
-    cout << "2. Make Deposit" << endl;
-    cout << "3. Make Withdrawal" << endl;
+    cout << "2. Make deposit" << endl;
+    cout << "3. Make withdrawal" << endl;
     cout << "0. EXIT" << endl;
 }
 

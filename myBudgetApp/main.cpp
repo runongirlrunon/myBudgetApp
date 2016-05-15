@@ -8,9 +8,8 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "budget.hpp"
-#include "budget_application.hpp"
-#include "tree.h"
+#include "budget.h"
+#include "budget_application.h"
 
 int main()
 {
